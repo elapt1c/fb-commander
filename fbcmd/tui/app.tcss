@@ -1,0 +1,295 @@
+/* fb-commander — amber-on-slate control room */
+
+Screen {
+    background: #0b0e14;
+    color: #d7e0ea;
+}
+
+* {
+    scrollbar-color: #2a3648;
+    scrollbar-background: #0b0e14;
+    scrollbar-size-vertical: 1;
+    scrollbar-size-horizontal: 1;
+}
+
+/* ---------- connect ---------- */
+
+#connect-scroll { height: 1fr; }
+#connect-wrap {
+    width: 100%;
+    height: 1fr;
+    align: center middle;
+    padding: 1 0 2 0;
+}
+#logo {
+    width: auto;
+    color: #ffa000;
+    text-style: bold;
+    margin-top: 1;
+    margin-bottom: 1;
+    padding-left: 1;
+}
+#tagline {
+    width: auto;
+    color: #5d6b7e;
+    margin-bottom: 1;
+    padding-left: 1;
+}
+#card, #saved-card {
+    width: 104;
+    max-width: 96%;
+    height: auto;
+    background: #10161f;
+    border: round #2a3648;
+    padding: 1 2;
+}
+#saved-card { margin-top: 1; }
+.field-label {
+    height: 1;
+    color: #ffa000;
+    text-style: bold;
+    margin-bottom: 1;
+}
+#creds {
+    height: 11;
+    background: #090d14;
+    border: round #2a3648;
+    padding: 0 1;
+}
+.hint { height: auto; color: #5d6b7e; margin-top: 1; }
+#error { height: auto; color: #ff6b6b; }
+#actions { height: 3; margin-top: 1; }
+#actions Checkbox { width: auto; height: 3; margin-right: 2; }
+#spacer { width: 1fr; height: 1; }
+#actions Button { margin-left: 1; }
+#status { height: auto; min-height: 1; color: #7d8899; }
+#footnote { width: auto; color: #3d4a5c; margin-top: 2; }
+#saved { height: auto; max-height: 5; background: transparent; border: none; }
+
+Button {
+    height: 3;
+    min-width: 12;
+    border: tall #2a3648;
+    background: #161d2b;
+    color: #c9d4e3;
+}
+Button:hover { background: #1d2635; border: tall #3b4a60; }
+Button.-primary {
+    background: #ffa000;
+    color: #14100a;
+    border: tall #ffa000;
+    text-style: bold;
+}
+Button.-primary:hover { background: #ffb333; border: tall #ffb333; }
+Button:disabled { opacity: 0.45; }
+
+Input {
+    background: #090d14;
+    border: round #2a3648;
+    padding: 0 1;
+}
+Input:focus { border: round #ffa000; }
+
+Checkbox { background: transparent; }
+Checkbox > .toggle--button { background: #1b2637; }
+
+/* ---------- shell ---------- */
+
+#topbar {
+    height: 3;
+    background: #0e131d;
+    border-bottom: solid #ffa000;
+    padding: 0 2;
+}
+#brand { width: 1fr; content-align: left middle; }
+#topright { width: auto; content-align: right middle; text-align: right; }
+
+#body { height: 1fr; }
+
+#rail {
+    width: 32;
+    background: #0c111a;
+    border-right: solid #1b2433;
+    padding: 1 1 0 1;
+}
+.rail-title {
+    height: 1;
+    color: #5d6b7e;
+    text-style: bold;
+    margin-bottom: 1;
+}
+#nav {
+    height: 1fr;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+#nav > .option-list--option { padding: 0 1; }
+#nav > .option-list--option-highlighted { background: #1b2637; }
+#nav > .option-list--option-hover { background: #141c28; }
+#railfoot {
+    height: auto;
+    color: #5d6b7e;
+    padding: 1 0 0 0;
+    border-top: solid #1b2433;
+}
+
+#pane { width: 1fr; padding: 0 1; }
+#pane-head {
+    height: 3;
+    content-align: left middle;
+    padding: 0 1;
+    border-bottom: solid #1b2433;
+}
+#viewport { height: 1fr; }
+
+/* ---------- dashboard ---------- */
+
+DashboardView { padding: 1 0; }
+#hero {
+    height: auto;
+    background: #10161f;
+    border: round #2a3648;
+    padding: 1 2;
+}
+#hero-left { width: 1fr; height: auto; }
+#hero-right { width: auto; height: auto; text-align: right; content-align: right top; }
+.metrics { height: auto; padding: 1 1 1 2; }
+.warning {
+    height: auto;
+    border-left: thick #ff6b6b;
+    background: #171116;
+    padding: 0 1;
+    margin-bottom: 1;
+}
+.section-title { height: 1; margin: 1 0 1 0; }
+.cards {
+    height: auto;
+    layout: grid;
+    grid-size: 2;
+    grid-gutter: 1;
+    grid-rows: auto;
+}
+.card {
+    height: auto;
+    min-height: 5;
+    background: #10161f;
+    border: round #202b3c;
+    padding: 1 2;
+}
+.card:hover { background: #141c28; border: round #ffa000; }
+.card.state-denied { border: round #35222a; }
+.card.state-denied:hover { border: round #ff6b6b; }
+.dash-hint { height: auto; color: #3d4a5c; margin-top: 2; }
+
+/* ---------- service views ---------- */
+
+ServiceView { height: 1fr; }
+ServiceView #split { height: 1fr; }
+ServiceView #split TreeBrowser { width: 45%; }
+ServiceView #split PreviewPane { width: 1fr; }
+ServiceView #stack { height: 1fr; }
+ServiceView #stack TableBrowser { height: 3fr; }
+ServiceView #stack PreviewPane { height: 2fr; }
+
+.pane-title {
+    height: 1;
+    color: #5d6b7e;
+    text-style: bold;
+    margin: 1 0 0 1;
+}
+.preview-meta {
+    height: auto;
+    color: #7d8899;
+    padding: 0 1;
+}
+PreviewPane { padding-left: 1; border-left: solid #1b2433; }
+#preview-body {
+    background: #090d14;
+    border: round #1b2433;
+    margin-top: 1;
+}
+#preview-body:focus { border: round #2f3f56; }
+
+TreeBrowser, TableBrowser { padding-right: 1; }
+Tree { background: transparent; padding: 0; }
+Tree > .tree--guides { color: #263041; }
+Tree > .tree--cursor { background: #1b2637; color: #ffffff; }
+
+#crumbs { height: 3; padding: 0 1; }
+#crumb-text { width: 1fr; content-align: left middle; }
+Button.mini {
+    height: 1;
+    min-width: 8;
+    width: auto;
+    border: none;
+    background: #1b2637;
+    color: #8fa1b7;
+    padding: 0 1;
+}
+Button.mini:hover { background: #253346; color: #ffffff; }
+
+DataTable { background: transparent; }
+DataTable > .datatable--header { background: #10161f; color: #7d8899; text-style: bold; }
+DataTable > .datatable--cursor { background: #1b2637; color: #ffffff; }
+DataTable > .datatable--hover { background: #141c28; }
+DataTable > .datatable--even-row { background: #0d121a; }
+
+#search { margin: 0 1 1 1; height: 3; }
+
+.locked { align: center middle; }
+.lock-body {
+    width: 74;
+    max-width: 96%;
+    height: auto;
+    padding: 2 3;
+    background: #10161f;
+    border: round #35222a;
+}
+
+/* ---------- modals ---------- */
+
+ModalScreen { background: rgba(4, 7, 12, 0.78); }
+.dialog-title { height: 1; margin-bottom: 1; }
+#dialog, #runner, #help-dialog { color: #d7e0ea; }
+#dialog .hint { margin-bottom: 1; }
+#checks { height: auto; max-height: 12; overflow-y: auto; margin-bottom: 1; }
+#checks Checkbox { height: 1; background: transparent; }
+#rows { height: auto; }
+.row { height: 3; }
+.row Static { width: 22; content-align: left middle; color: #8fa1b7; }
+.row Input { width: 1fr; }
+#dialog-buttons { height: 3; align-horizontal: right; margin-top: 1; }
+#dialog-buttons Button { margin-left: 2; }
+
+#runner #current { color: #c9d4e3; }
+#bar { height: 1; margin: 1 0; }
+ProgressBar > .bar--bar { color: #4dd0a7; background: #1b2637; }
+ProgressBar > .bar--complete { color: #4dd0a7; background: #1b2637; }
+#log {
+    height: 14;
+    background: #090d14;
+    border: round #1b2433;
+    padding: 0 1;
+}
+#summary { height: auto; margin-top: 1; }
+#runner-buttons { height: 3; align-horizontal: right; margin-top: 1; }
+#runner-buttons Button { margin-left: 2; }
+
+#help-dialog {
+    width: 96;
+    max-width: 96%;
+    height: 85%;
+    background: #10161f;
+    border: round #ffa000;
+    padding: 1 2;
+}
+#help-body { height: 1fr; background: transparent; }
+#help-dialog Button { margin-top: 1; }
+
+Footer { background: #0e131d; color: #5d6b7e; }
+Footer > .footer--key { background: #1b2637; color: #c9d4e3; }
+Footer > .footer--description { color: #5d6b7e; }
+
+ToastRack { margin: 1 2; }
+Toast { background: #10161f; border: round #2a3648; }

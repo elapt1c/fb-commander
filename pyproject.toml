@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fb-commander"
+version = "1.0.0"
+description = "Terminal control room for Firebase projects: browse every service, see what the key can access, back everything up."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "textual>=1.0,<9",
+    "google-auth>=2.28,<3",
+    "requests>=2.31,<3",
+    "cryptography>=42,<47",
+]
+
+[project.scripts]
+fb-commander = "fbcmd.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["fbcmd*"]
+
+[tool.setuptools.package-data]
+"fbcmd.tui" = ["*.tcss"]
