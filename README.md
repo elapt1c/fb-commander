@@ -71,7 +71,7 @@ none of them crash the app or abort a backup.
 `b` opens the options dialog; `./run.sh backup` runs the same thing headlessly.
 
 ```
-~/firebase-backups/entres-potes-20261127-104500/
+~/firebase-backups/demo-project-20261127-104500/
 ├── README.txt
 ├── manifest.json              what ran, what was skipped, counts, timings
 ├── project/                   project.json, apps.json, enabled_apis.json
